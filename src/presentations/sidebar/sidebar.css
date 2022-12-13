@@ -1,0 +1,40 @@
+/* full side bar css */
+.Sidebar{
+    display: flex;
+    flex: 0.30;
+    flex-direction: column;
+}
+.TEXT{
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 13px;
+    align-items:center;
+    line-height: 14px;
+    color: #B1B3B5;
+}
+.Sidebar__header{
+    display: flex;
+    padding: 10px 16px;
+    height:40px;
+    border-right: 1px solid gray; 
+}
+.Sidebar__headerRight{
+    display: flex;
+    align-items: center;
+    min-width: 8vw;
+
+}
+.Sidebar__headerRight > .MuiSvgIcon-root{
+   margin-right: 2vw;
+   font-size: 24px !important ;
+
+}
+ .Sidebar__chats{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: #131c21;
+ 
+    overflow: scroll;
+ }
