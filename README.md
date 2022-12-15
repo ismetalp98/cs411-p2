@@ -1,7 +1,3 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
@@ -23,3 +19,13 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+## Source Code
+
+Source files are included in src folder. In src folder there are three layer. 
+
+### First layer is `presentations` includes UI.
+
+### Second layer is `services` includes bussiness logics for function calls.
+
+### third layer is `repository` includes database interaction function.
