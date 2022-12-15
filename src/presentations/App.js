@@ -1,10 +1,10 @@
 // wholae app is deployed here
 import './App.css';
-import Chat from './presentations/chat/Chat';
+import Chat from './chat/Chat';
 import React, { useEffect } from 'react';
-import Sidebar from './presentations/sidebar/Sidebar';
+import Sidebar from './sidebar/Sidebar';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { registerUser } from './repository/userRepo';
+import { createUser } from '../services/userService';
 
 function App() {
   useEffect(() => {
@@ -12,7 +12,7 @@ function App() {
     if (!user && user === null) {
       const name = prompt("Please enter your name");
       sessionStorage.setItem("user", name);
-      registerUser(name);
+      createUser(name);
     }
   }, []);
 

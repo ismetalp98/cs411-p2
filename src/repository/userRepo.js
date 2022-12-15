@@ -1,4 +1,4 @@
-import db from '../firebase';
+import db from './firebase';
 import { setDoc, doc, collection, onSnapshot } from 'firebase/firestore';
 
 export const registerUser = (name) => {

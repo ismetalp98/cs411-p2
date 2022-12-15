@@ -1,5 +1,5 @@
 import { collection, addDoc, onSnapshot, orderBy, query } from "firebase/firestore";
-import db from '../firebase';
+import db from './firebase';
 
 export const sendMessage = (message, roomId, user) => {
     const me = collection(db, "users", user, "chats", roomId, "messages");

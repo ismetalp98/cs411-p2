@@ -1,5 +1,9 @@
 import * as userRepo from "../repository/userRepo"
 
+export const createUser = (name) => {
+    return userRepo.registerUser(name);
+}
+
 export const getUsers = () => {
     return userRepo.getUsers();
 }
