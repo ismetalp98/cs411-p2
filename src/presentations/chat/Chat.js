@@ -1,18 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import { useParams } from "react-router-dom";
 import "./Chat.css";
 import { Avatar } from '@mui/material';
 import Divider from '@mui/material/Divider';
-import { useParams } from "react-router-dom";
 import { getMessages, sendMessage } from '../../services/chatServices';
-import { useEffect } from 'react';
-import { useRef } from 'react';
 
 function Chat() {
   const [input, setInput] = useState("");
   const { roomId } = useParams();
   const [messages, setMessages] = useState([]);
   const user = sessionStorage.getItem("user");
-
   const messagesEndRef = useRef(null);
   
   const scrollToBottom = () => {
@@ -35,7 +32,6 @@ function Chat() {
     }
   }
 
-  console.log('test');
   return (
     <div className="Chat">
       <div className="Chat__header">
