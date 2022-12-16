@@ -15,10 +15,10 @@ export const getUsers = () => {
     })
 }
 
-export const getChats = (user) => {
+export const getChats = (user, setRooms) => {
     return new Promise((resolve, reject) => {
         onSnapshot(collection(db, "users", user, 'chats'), (snapshot) =>
-            resolve(snapshot.docs.map((doc) => ({
+            setRooms(snapshot.docs.map((doc) => ({
                 data: doc.data(),
                 id: doc.id,
             })))

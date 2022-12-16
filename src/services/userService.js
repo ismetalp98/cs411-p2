@@ -8,8 +8,8 @@ export const getUsers = () => {
     return userRepo.getUsers();
 }
 
-export const getChats = (user) => {
-    return userRepo.getChats(user);
+export const getChats = (user, setRooms) => {
+    return userRepo.getChats(user, setRooms);
 }
 
 export const createChat = (user, roomName) => {

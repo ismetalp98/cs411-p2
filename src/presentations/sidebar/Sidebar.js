@@ -9,26 +9,26 @@ import { getUsers, getChats, createChat } from '../../services/userService';
 
 function Sidebar() {
   const [rooms, setRooms] = useState([]);
-  const [users, setUsers] = useState([]);
   const [created, setCreated] = useState(false);
   const user = sessionStorage.getItem('user') ? sessionStorage.getItem('user') : 'null';
 
   useEffect(() => {
-    getChats(user).then((rooms) => setRooms(rooms));
-    getUsers().then((result) => setUsers(result));
+    getChats(user, setRooms);
   }, [user, created]);
 
   const createChatFunc = () => {
-    const filter = users.filter(usera => usera !== user);
-    const roomName = prompt(filter);
+    getUsers().then((result) => {
+      const roomName = prompt(result);
 
-    if (roomName) {
-      if (filter.indexOf(roomName) === -1)
-        return alert("chose");
+      if (roomName) {
+        if (result.indexOf(roomName) === -1)
+          return alert("chose");
 
-      createChat(user, roomName);
-      setCreated(!created);
-    }
+        createChat(user, roomName);
+        setCreated(!created);
+      }
+    });
+
   };
 
   return (
@@ -39,7 +39,7 @@ function Sidebar() {
         <div className="Sidebar__headerRight">
           <IconButton>
             <Tooltip title="Add Room">
-              <AddCircleOutline onClick={createChatFunc} style={{ color: "#B1B3B5" }} />
+              <AddCircleOutline onClick={() => createChatFunc()} style={{ color: "#B1B3B5" }} />
             </Tooltip>
           </IconButton>
         </div>
